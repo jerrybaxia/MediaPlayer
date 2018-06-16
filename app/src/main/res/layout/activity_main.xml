@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <!--标题栏-->
+    <include layout="@layout/activity_titlebar" ></include>
     <!-- FrameLayout -->
     <FrameLayout
         android:id="@+id/fl_main_content"
@@ -38,14 +39,14 @@
             android:text="本地音乐" />
 
         <RadioButton
-            android:id="@+id/rb_new_video"
+            android:id="@+id/rb_net_video"
             style="@style/bottom_tag_style"
             android:layout_weight="1"
             android:drawableTop="@drawable/rb_netvideo_drawable_selector"
             android:text="网络视频" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rb_net_audio"
             style="@style/bottom_tag_style"
             android:layout_weight="1"
             android:drawableTop="@drawable/rb_netaudio_drawable_selector"
