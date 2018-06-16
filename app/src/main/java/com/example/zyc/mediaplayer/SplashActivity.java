@@ -44,15 +44,20 @@ public class SplashActivity extends AppCompatActivity {
         return super.onTouchEvent(event);
     }
 
+    private boolean isStartMainActivity;
+
     /**
-     * 跳转到主页面，并且把当前页面关闭掉
+     * 跳转到主页面，并且把当前页面关闭掉，但这里可能是被点击和定时器同时进来，那么要进行一个锁
      */
-    private void startMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        //关闭当前页面
-        finish();
-        Log.w(TAG,"startMainActivity");
+    private synchronized void startMainActivity() {
+        if(!isStartMainActivity) {
+            isStartMainActivity = true;
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            //关闭当前页面
+            finish();
+            Log.w(TAG, "startMainActivity");
+        }
 
     }
 
