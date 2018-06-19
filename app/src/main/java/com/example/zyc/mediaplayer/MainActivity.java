@@ -73,6 +73,45 @@ public class MainActivity extends FragmentActivity {
         ((RadioButton)rg_bottom_tag.findViewById(R.id.rb_video)).setChecked(true);
     }
 
+
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        LogUtil.e("onRestart--");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogUtil.e("onStart--");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogUtil.e("onResume--");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogUtil.e("onPause--");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LogUtil.e("onStop--");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogUtil.e("onDestroy--");
+    }
+
     /**
      * 低部按钮监听
      */

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zyc.mediaplayer">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -17,9 +19,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:launchMode="singleInstance" >
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:launchMode="singleInstance">
 
         </activity>
+        <!--屏幕切换导致Activity销毁并重新创建所以用configChanges进行忽略-->
+        <activity
+            android:name=".activity.SystemVideoPlayer"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name=".activity.TestB" android:theme="@style/Theme.AppCompat.Dialog" />
     </application>
 
 </manifest>

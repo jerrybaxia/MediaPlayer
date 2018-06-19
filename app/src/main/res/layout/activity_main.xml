@@ -5,6 +5,11 @@
     android:orientation="vertical">
     <!--标题栏-->
     <include layout="@layout/activity_titlebar" ></include>
+    <!--<com.example.zyc.mediaplayer.view.TitleBar-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!---->
+    <!--</com.example.zyc.mediaplayer.view.TitleBar>-->
     <!-- FrameLayout -->
     <FrameLayout
         android:id="@+id/fl_main_content"
