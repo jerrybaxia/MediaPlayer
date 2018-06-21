@@ -3,11 +3,13 @@ package com.example.zyc.mediaplayer.domain;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.io.Serializable;
+
 /**
  * @author zyc             //Parcelable 和 Serializable
  * 媒体信息
  */
-public class MediaItem implements Parcelable {
+public class MediaItem implements Serializable {
     private String name;
     private long duration;
     private long size;
@@ -18,13 +20,13 @@ public class MediaItem implements Parcelable {
 
     }
 
-    protected MediaItem(Parcel in) {
-        name = in.readString();
-        duration = in.readLong();
-        size = in.readLong();
-        data = in.readString();
-        artist = in.readString();
-    }
+//    protected MediaItem(Parcel in) {
+//        name = in.readString();
+//        duration = in.readLong();
+//        size = in.readLong();
+//        data = in.readString();
+//        artist = in.readString();
+//    }
 
     public String getName() {
         return name;
@@ -81,30 +83,30 @@ public class MediaItem implements Parcelable {
                 '}';
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeLong(duration);
-        dest.writeLong(size);
-        dest.writeString(data);
-        dest.writeString(artist);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<MediaItem> CREATOR = new Creator<MediaItem>() {
-        @Override
-        public MediaItem createFromParcel(Parcel in) {
-            return new MediaItem(in);
-        }
-
-        @Override
-        public MediaItem[] newArray(int size) {
-            return new MediaItem[size];
-        }
-    };
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeString(name);
+//        dest.writeLong(duration);
+//        dest.writeLong(size);
+//        dest.writeString(data);
+//        dest.writeString(artist);
+//    }
+//
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    public static final Creator<MediaItem> CREATOR = new Creator<MediaItem>() {
+//        @Override
+//        public MediaItem createFromParcel(Parcel in) {
+//            return new MediaItem(in);
+//        }
+//
+//        @Override
+//        public MediaItem[] newArray(int size) {
+//            return new MediaItem[size];
+//        }
+//    };
 
 }

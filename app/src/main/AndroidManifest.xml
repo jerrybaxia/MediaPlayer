@@ -259,6 +259,10 @@
         <activity
             android:name=".activity.TestB"
             android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".activity.VitamioVideoPlayer"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="landscape"
+            android:theme="@style/noAnimation_Theme"/>
     </application>
 
 </manifest>
